@@ -1,0 +1,19 @@
+.showCalendar {
+    margin-bottom: 20px;
+}
+
+.event-box {
+    clear: both;
+    padding: 30px;
+    border: solid 1px #eeeeee;
+}
+
+.event-box table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.event-box td {
+    vertical-align: top;
+    padding: 5px;
+}

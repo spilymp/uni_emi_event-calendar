@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="de">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="css/filter.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/calendar.js"></script>
+    <script type="text/javascript" src="js/filter.js"></script>
+
+    <title>Veranstaltungskalender</title>
+</head>
+<body>
+
+<div class="box header top">
+    <h1>Veranstaltungskalender</h1>
+    <h4>Ein Projekt für die Veranstaltung "Einführung in die Medieninformatik"</h4>
+</div>
+
+<div class="box">
+    <ul class="navigation">
+        <li><a class="filter">Stadt</a></li>
+        <li><a class="filter">Konzert</a></li>
+    </ul>
+    <div class="search">
+        <input id="searchInput"
+               type="text"
+               maxlength="50">
+        <input type="button"
+               class="button searchBT"
+               value="Suchen"/>
+    </div>
+</div>
+
+<div class="box">
+    <!-- Kalender -->
+    <div class="calendar"></div>
+</div>
+
+<div class="box">
+    <!-- Filterresultate -->
+    <div class="filterResults"></div>
+</div>
+
+<div class="box footer bottom">
+    <hr/>
+    Dieses Projekt wurde 2014/2015 erstellt von: Name 1, Name 2, Name 3
+</div>
+</body>
+</html>
