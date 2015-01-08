@@ -1,0 +1,39 @@
+.showCalendar {
+    margin-bottom: 20px;
+}
+
+.event-box {
+    display: block;
+    clear: both;
+    padding: 30px;
+    border: solid 1px #eeeeee;
+    overflow: hidden;
+}
+
+.event-box table {
+    table-layout: fixed;
+}
+
+.event-box td {
+    vertical-align: top;
+    padding: 5px;
+}
+
+.image-filter {
+    float: left;
+    width: 50%;
+    overflow: visible;
+    margin-bottom: 20px;
+    margin-right: 20px;
+
+}
+
+.text-filter {
+    position: relative;
+}
+
+.table-filter {
+    float: right;
+    width: 48%;
+    margin-bottom: 20px;
+}

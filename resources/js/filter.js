@@ -20,10 +20,9 @@ var filter = function () {
     });
 
     $('.searchBT').click(function () {
-
         $('.calendar').hide();
         $('.event-box').remove();
-
+        $('.showCalendar').show();
         filterInput($("#searchInput").val());
     });
 };
@@ -47,7 +46,7 @@ function validateDate(date) {
 
 function filterInput(input) {
     // ganze XML-datei einlesen und in Variable 'XMLmediaArray' speichern
-    $.get("data/databank.xml", function (XMLmediaArray) {
+    $.get("resources/data/databank.xml", function (XMLmediaArray) {
 
         var $myMedia;
         var isDate = validateDate(input);
@@ -69,6 +68,11 @@ function filterInput(input) {
                 if ($myMedia.find("tags").text().match(pattern)) {
                     appendResult($myMedia);
                     count++;
+                } else {
+                    if ($myMedia.find("titel").text().match(pattern)) {
+                        appendResult($myMedia);
+                        count++;
+                    }
                 }
             }
         });
@@ -83,9 +87,9 @@ function appendResult(result) {
     $('.filterResults').append(
         '<div class="event-box">' +
         '<h3>' + result.find("titel").text() + '</h3>' +
-        '<table>' +
+        '<div class="image-filter" >' + '<img src="' + result.find("image").text() + '" width="100%"/>' + '</div>' +
+        '<table class="table-filter">' +
         '<tr>' +
-        '<td rowspan="4" width="50%" height="100px" style="overflow: hidden;">' + '<img src="' + result.find("image").text() + '" width="100%"/>' + '</td>' +
         '<td>' + 'Wann ?' + '</td>' +
         '<td>' + result.find("datum").text() + '<br/>' + result.find("zeit").text() + '</td>' +
         '</tr>' +
@@ -105,7 +109,7 @@ function appendResult(result) {
         '<td>' + result.find("tags").text() + '</td>' +
         '</tr>' +
         '</table>' +
-        '<span class="description">' + result.find("text").text() + '</span>' +
+        '<span class="description text-filter">' + result.find("text").text() + '</span>' +
         '</div>'
     );
 }
@@ -113,7 +117,7 @@ function appendResult(result) {
 function appendNothingFound(input) {
     $('.filterResults').append(
         '<div class="event-box">' +
-        '<h3>' + 'Leider wurde für ihr Suche nach "'+ input + '" nichts gefunden. Bitte beachten Sie, wenn Sie nach einem Datum suchen, dass Sie es im Format "dd.mm.yyyy" eingeben.' + '</h3>' +
+        '<h3>' + 'Leider wurde für ihr Suche nach "' + input + '" nichts gefunden. Bitte beachten Sie, wenn Sie nach einem Datum suchen, dass Sie es im Format "dd.mm.yyyy" eingeben.' + '</h3>' +
         '</div>'
     );
 }

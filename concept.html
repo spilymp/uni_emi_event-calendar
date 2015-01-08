@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head lang="de">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/filter.css">
+    <link rel="stylesheet" type="text/css" href="resources/font-awesome/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="resources/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="resources/js/calendar2.js"></script>
+    <script type="text/javascript" src="resources/js/filter.js"></script>
+
+    <title>Veranstaltungskalender - Konzept</title>
+</head>
+<body>
+
+<div id="container">
+
+    <div class="box">
+
+    </div>
+
+    <div class="box" id="anker-navigation">
+        <h1>
+            <a href="index.html">
+                <i class="fa fa-home"></i>
+                Zurück zur Hauptseite
+            </a>
+        </h1>
+
+        <div class="text filled">
+            Auf dieser Seite soll der Entstehungsprozess unseres Kalenders veranschaulicht werden. Dazu gehören die
+            folgenden Punkte:
+        </div>
+
+        <h3>
+            <a href="#anker-team">
+                <i class="fa fa-arrow-right"></i>
+                Unser Team + Aufteilung
+            </a>
+        </h3>
+
+        <h3>
+            <a href="#anker-entwicklung">
+                <i class="fa fa-arrow-right"></i>
+                Entwicklung + Entwürfe
+            </a>
+        </h3>
+
+        <h3>
+            <a href="#anker-guide">
+                <i class="fa fa-arrow-right"></i>
+                Styleguide
+            </a>
+        </h3>
+
+    </div>
+    <div class="box">
+
+        <h1 id="anker-team">
+            <a href="#anker-navigation"><i class="fa fa-arrow-up"></i></a>
+            Unser Team + Aufteilung
+        </h1>
+        <table>
+            <tr>
+                <td>Konrad Sawade</td>
+                <td>Umsetzung/Programmierung</td>
+            </tr>
+            <tr>
+                <td>Alfred Sandvig</td>
+                <td>Konzept/Entwurf</td>
+            </tr>
+            <tr>
+                <td>Richard Elias</td>
+                <td>Events/Datenbank</td>
+            </tr>
+            <tr>
+                <td>Richard Litoměřice</td>
+                <td>Struktur/Styleguide</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="box">
+
+        <h1 id="anker-entwicklung">
+            <a href="#anker-navigation"><i class="fa fa-arrow-up"></i></a>
+            Entwicklung + Entwürfe
+        </h1>
+
+        <div class="text filled">
+            Hier sollen die Entwicklung unserer Website anhand einiger Entwürfe dargestellt werden.
+        </div>
+
+        <div class="text filled">
+            Unsere grundlegende Idee war es eine Singlepage-Anwendung zu schaffen. Das heißt es gibt nur eine Seite in
+            den unsere Inhalte
+            nachgeladen werden. Das ist uns auch gelungen. Darüber hinaus war die Idee am Anfang Eventdetails mittels
+            eines Overlays zu visualisieren. Zu sehen im folgenden Bild.
+        </div>
+
+        <img src="resources/images/concept2.jpg" height="300px">
+
+        <div class="text filled">
+            Einen Eindruck unseres ersten Version erhält man auf dem folgenden Bild. An dieser Stelle, war die Idee des
+            Overlays auch schon wieder verworfen. Jedoch die Idee eines Sliders im Kopfbereich aktuell.
+        </div>
+
+        <img src="resources/images/concept1.jpg" height="300px">
+
+        <div class="text filled">
+            Ausgehend von dieser Version, merkten wir schnell, dass am Design noch einiges zu tun ist, sowie auch die
+            Navigation dringend eingebaut werden musste. Unseren Navigationsentwurf findet sich <a
+                href="resources/data/Navigationsentwurf.pdf" target="_blank">HIER</a>.
+        </div>
+
+        <div class="text filled">
+            Im Endeffekt mussten wir viele Ideen, die wir Anfangs hatten, aus Stylegründen, Zeitgründen oder
+            Komplexitätsgründen wieder verwerfen, um das aktuelle Endresultat zu erhalten.
+        </div>
+    </div>
+
+    <div class="box">
+
+        <h1 id="anker-guide">
+            <a href="#anker-navigation"><i class="fa fa-arrow-up"></i></a>
+            Styleguide
+        </h1>
+
+        <div class="text filled">Im folgenden werden verschiedene Elemente vorgestellt, die eine standardisierte
+            Formatierung
+            aufweisen.
+            Zusätzlich werden einige spezifischen Eigenschaften aufgezählt.
+        </div>
+
+        <div class="text filled">Den Start bilden die einzelnen Überschriften, gestylt stehen die Überschriften
+            <i>h1</i> bis
+            <i>h4</i> zur Verfügung. Auch wenn möglicherweise in der fertigen Anwendung nicht alle Verwendung finden.
+        </div>
+
+        <h1>Überschrift h1</h1>
+
+        <h2>Überschrift h2</h2>
+
+        <h3>Überschrift h3</h3>
+        <h4>Überschrift h4</h4>
+
+        <div class="text filled">Weiter geht es mit einer Tabelle, welche zusätzliche einige grundlegenden Informationen
+            zum Design enthält.
+        </div>
+
+        <table>
+            <tr>
+                <td>Standardschriftgröße</td>
+                <td>14px</td>
+            </tr>
+            <tr>
+                <td>Schriftart</td>
+                <td>Arial</td>
+            </tr>
+            <tr>
+                <td>Textfarbe</td>
+                <td>Schwarz</td>
+            </tr>
+            <tr>
+                <td>Hauptfarben</td>
+                <td>Weiß und Grau</td>
+            </tr>
+            <tr>
+                <td>Auszeichnungsfarbe (für Links, ...)</td>
+                <td>Dunkelrot (#660000)</td>
+            </tr>
+        </table>
+
+        <div class="text filled">Als nächstes ein einfacher Link. Hier gibt es keine Unterscheidungen zwischen
+            <i>normal</i>, <i>aktiv</i> oder <i>darüberfahren</i>.
+        </div>
+
+        <a href="index.html">Ein Beispiellink der einen zurück zur Hauptseite bringt!</a>
+
+        <div class="text filled">
+            Ein weiteres Element sind Listen, sie finden jedoch bei uns keine große Anwendung.
+        </div>
+
+        <ul>
+            <li>Punkt 1</li>
+            <li>Punkt 2</li>
+            <li>Punkt 3</li>
+        </ul>
+
+        <div class="text filled">
+            Darüber hinaus gibt es natürlich noch weitere Tags, die jedoch keine standardisierten Style haben, da sie
+            sehr individuell genutzt werden. Dazu gehören beispielsweise Bilder. Zudem gibt es noch Tags, die durch das
+            Nutzen
+            von CSS Eigenschaften nicht benötigt werden. Beispiele hier sind Trennlinien oder auch Textformatierungen
+            (/u oder /b).
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Copyright &#169; 2015<br>
+            Ein Projekt für die Veranstaltung "Einführung in die Medieninformatik"
+        </p>
+
+        <p>
+            This solution has been created by:<br>
+            Richard Elias, Alfred Sandvig, Konrad Sawade
+        </p>
+    </footer>
+
+</div>
+
+</body>
+</html>

@@ -3,51 +3,154 @@
 <head lang="de">
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/calendar.css">
-    <link rel="stylesheet" type="text/css" href="css/filter.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/filter.css">
+    <link rel="stylesheet" type="text/css" href="resources/font-awesome/css/font-awesome.min.css">
 
-    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/calendar.js"></script>
-    <script type="text/javascript" src="js/filter.js"></script>
+    <script type="text/javascript" src="resources/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="resources/js/calendar.js"></script>
+    <script type="text/javascript" src="resources/js/filter.js"></script>
 
     <title>Veranstaltungskalender</title>
 </head>
 <body>
 
-<div class="box header top">
-    <h1>Veranstaltungskalender</h1>
-    <h4>Ein Projekt für die Veranstaltung "Einführung in die Medieninformatik"</h4>
-</div>
+<header>
+    <div id="header">
+        <div class="left">
+            <ul>
+                <li class="dropdown-link">
+                    <a class="navBt" href="#">
+                        <i class="fa fa-building-o"></i>
+                        <span class="filter">Stadt/Lokales</span>
+                    </a>
 
-<div class="box">
-    <ul class="navigation">
-        <li><a class="filter">Stadt</a></li>
-        <li><a class="filter">Konzert</a></li>
-    </ul>
-    <div class="search">
-        <input id="searchInput"
-               type="text"
-               maxlength="50">
-        <input type="button"
-               class="button searchBT"
-               value="Suchen"/>
+                    <div class="dropdown"> <!-- Dropdown Registrieren -->
+                        <ul>
+                            <li class="filter"><span>Demonstration</span></li>
+
+                            <li class="filter"><span>Markt</span></li>
+
+                            <li class="filter"><span>Messe</span></li>
+
+                            <li class="filter"><span>Stadtfest</span></li>
+
+                            <li class="filter"><span>Umzug</span></li>
+
+                            <li class="filter"><span>Zirkus</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-link">
+                    <a class="navBt" href="#">
+                        <i class="fa fa-music"></i>
+                        <span class="filter">Kultur</span>
+                    </a>
+
+                    <div class="dropdown"> <!-- Dropdown Registrieren -->
+                        <ul>
+                            <li class="filter"><span>Oper</span></li>
+
+                            <li class="filter"><span>Ausstellungen</span></li>
+
+                            <li class="filter"><span>Kino</span></li>
+
+                            <li class="filter"><span>Theater</span></li>
+
+                            <li class="filter"><span>Kabaret</span></li>
+
+                            <li class="filter"><span>Musical</span></li>
+
+                            <li class="filter"><span>Konzert</span></li>
+
+                            <li class="filter"><span>Festival</span></li>
+
+                            <li class="filter"><span>Lesung</span></li>
+
+                            <li class="filter"><span>Vortrag</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-link">
+                    <a class="navBt" href="#">
+                        <i class="fa fa-bicycle"></i>
+                        <span class="filter">Sport</span>
+                    </a>
+
+                    <div class="dropdown"> <!-- Dropdown Registrieren -->
+                        <ul>
+                            <li class="filter"><span>Wettkämpfe</span></li>
+
+                            <li class="filter"><span>Marathon</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown-link">
+                    <a class="navBt" href="#">
+                        <i class="fa fa-users"></i>
+                        <span class="filter">Gesellschaft</span>
+                    </a>
+
+                    <div class="dropdown"> <!-- Dropdown Registrieren -->
+                        <ul>
+                            <li class="filter"><span>Dinner</span></li>
+
+                            <li class="filter"><span>Empfang</span></li>
+
+                            <li class="filter"><span>Gala</span></li>
+
+                            <li class="filter"><span>Party</span></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="right search">
+            <input id="searchInput"
+                   class="form-control"
+                   type="text"
+                   maxlength="50">
+            <a class="button searchBT" href="#">
+                <i class="fa fa-search"></i>
+            </a>
+        </div>
+
+        <div class="right">
+            <ul>
+                <li>
+                    <a class="navBt" href="concept.html">
+                        <i class="fa fa-star"></i>
+                        <span>Konzept</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="container">
+    <div class="box">
+        <!-- Kalender -->
+        <div class="calendar"></div>
+        <!-- Filterresultate -->
+        <div class="filterResults"></div>
     </div>
 </div>
 
-<div class="box">
-    <!-- Kalender -->
-    <div class="calendar"></div>
-</div>
+<footer>
+    <p>
+        Copyright &#169; 2015<br>
+        Ein Projekt für die Veranstaltung "Einführung in die Medieninformatik"
+    </p>
 
-<div class="box">
-    <!-- Filterresultate -->
-    <div class="filterResults"></div>
-</div>
+    <p>
+        This solution has been created by:<br>
+        Richard Elias, Alfred Sandvig, Konrad Sawade
+    </p>
+</footer>
 
-<div class="box footer bottom">
-    <hr/>
-    Dieses Projekt wurde 2014/2015 erstellt von: Name 1, Name 2, Name 3
-</div>
+
 </body>
 </html>
