@@ -9,7 +9,6 @@ var manageCalendar = function () {
     var curyear = todaydate.getFullYear();
 
     buildHead();
-    buildCal(curmonth, curyear);
 
     // Zurück Monat
     $('.back').click(function () {
@@ -51,6 +50,8 @@ var manageCalendar = function () {
         curyear = todaydate.getFullYear();
         buildCal(curmonth, curyear);
     });
+
+    buildCal(curmonth, curyear);
 };
 
 function buildHead() {
@@ -131,7 +132,7 @@ function buildCal(m, y) {
 
             $($datumString + ' .event').append(
                 '<div class="event-title">' +
-                '<a class="event-link">' + $myMedia.find("titel").text() + '</a>' +
+                '<a class="event-link" href="#">' + $myMedia.find("titel").text() + '</a>' +
                 '</div>' +
                 '<div class="tooltip">' +
                 '<table>' +
@@ -153,24 +154,20 @@ function buildCal(m, y) {
                 '</table>' +
                 '</div>'
             );
+
+            $($datumString + ' .event .event-link').click(function () {
+                $('.calendar').hide();
+                $('.event-box').remove();
+                $('.showCalendar').show();
+                filterInput($(this).text());
+            });
         });
     });
 
     $('.current-date')
         .empty()
         .text(months[oD.getMonth()] + ' ' + oD.getFullYear());
-
 }
-
-// Klick für Detailansicht
-$('.event-link').click(function (e) {
-    e.preventDefault();
-    console.log("Hallo");
-    $('.calendar').hide();
-    $('.event-box').remove();
-    $('.showCalendar').show();
-    filterInput($(this).text());
-});
 
 function replaceAll(find, replace, str) {
     var tempStr = str.replace(find, replace);
