@@ -91,7 +91,7 @@
     margin: 4px;
     width: 250px;
     height: auto;
-    overflow: auto;
+    overflow: visible;
     box-shadow: 3px 3px 5px #5f5f5f;
 }
 

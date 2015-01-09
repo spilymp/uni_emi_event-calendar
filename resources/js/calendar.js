@@ -113,7 +113,7 @@ function buildCal(m, y) {
         else $($classT).append('<div class="tag">' + x + '</div>');
     }
 
-    var $datumString;
+    var $datumString = '';
     var $myMedia;
 
     // ganze XML-datei einlesen und in Variable 'XMLmediaArray' speichern
@@ -124,46 +124,57 @@ function buildCal(m, y) {
 
             // gefundenen Abschnitt in Variable zwischenspeichern (cachen)
             $myMedia = $(this);
-            $datumString = "." + replaceAll(".", "", $myMedia.find("datum").text());
+            $datumString = $myMedia.find("datum").text();
+            if ($datumString != '') {
+                $datumString = replaceAll(".", "", $datumString);
+                $datumString = replaceAll(" ", "", $datumString);
+                if ($datumString.contains('-')) {
+                    cacheArray = $datumString.split('-');
+                    $datumString = cacheArray[cacheArray.length - 1];
+                }
 
-            // Wenn Datum des Events im Kalender gefunden wird, wird es angehängt.
-            $($datumString).append(
-                '<div class="event">');
+                var $classDatumString = '.' + $datumString;
 
-            $($datumString + ' .event').append(
-                '<div class="event-title">' +
-                '<a class="event-link" href="#">' + $myMedia.find("titel").text() + '</a>' +
-                '</div>' +
-                '<div class="tooltip">' +
-                '<table>' +
+                if ($classDatumString != '.' && $classDatumString != null) {
+                    // Wenn Datum des Events im Kalender gefunden wird, wird es angehängt.
+                    $($classDatumString).append(
+                        '<div class="event">' +
+                        '<div class="event-title">' +
+                        '<a class="event-link" href="#">' + $myMedia.find("titel").text() + '</a>' +
+                        '</div>' +
+                        '<div class="tooltip">' +
+                        '<table>' +
 
-                '<tr>' +
-                '<td width="25%">' + 'Wann?' + '</td>' +
-                '<td>' + $myMedia.find("zeit").text() + ' Uhr' + '</td>' +
-                '</tr>' +
+                        '<tr>' +
+                        '<td width="25%">' + 'Wann?' + '</td>' +
+                        '<td>' + $myMedia.find("zeit").text() + ' Uhr' + '</td>' +
+                        '</tr>' +
 
-                '<tr>' +
-                '<td>' + 'Wo?' + '</td>' +
-                '<td>' + $myMedia.find("address").text() + '</td>' +
-                '</tr>' +
+                        '<tr>' +
+                        '<td>' + 'Wo?' + '</td>' +
+                        '<td>' + $myMedia.find("address").text() + '</td>' +
+                        '</tr>' +
 
-                '<tr>' +
-                '<td>' + 'Tags' + '</td>' +
-                '<td>' + $myMedia.find("tags").text() + '</td>' +
-                '</tr>' +
-                '</table>' +
-                '</div>'
-            );
+                        '<tr>' +
+                        '<td>' + 'Tags' + '</td>' +
+                        '<td>' + $myMedia.find("tags").text() + '</td>' +
+                        '</tr>' +
+                        '</table>' +
+                        '</div>' +
+                        '</div>'
+                    );
+                }
 
-            $($datumString + ' .event .event-link').click(function () {
-                $('.calendar').hide();
-                $('.event-box').remove();
-                $('.showCalendar').show();
-                filterInput($(this).text());
-            });
+                $($classDatumString + ' .event .event-link').click(function () {
+                    $('.calendar').hide();
+                    $('.event-box').remove();
+                    $('.showCalendar').show();
+                    filterInput($(this).text());
+                });
+            }
         });
-    });
 
+    });
     $('.current-date')
         .empty()
         .text(months[oD.getMonth()] + ' ' + oD.getFullYear());
