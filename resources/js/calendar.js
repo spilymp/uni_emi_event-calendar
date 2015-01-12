@@ -105,7 +105,8 @@ function buildCal(m, y) {
     for (i = 1; i <= 42; i++) {
         var x = ((i - oD.od >= 0) && (i - oD.od < dim[m - 1])) ? i - oD.od + 1 : '&nbsp;';
 
-        $tag = (x == '&nbsp;' ? i + 'last' : ((x < 10 ? ('0' + x) : '' + x) + (oD.getMonth() + 1) + oD.getFullYear()));
+        cacheMonth = (oD.getMonth() + 1);
+        $tag = (x == '&nbsp;' ? i + 'last' : ((x < 10 ? ('0' + x) : '' + x) + (cacheMonth < 10 ? '0' + cacheMonth : cacheMonth) + oD.getFullYear()));
         $classT = '.' + $tag;
         $('.calendar-body ').append('<div class="day-box ' + $tag + '">');
 
@@ -113,7 +114,7 @@ function buildCal(m, y) {
         else $($classT).append('<div class="tag">' + x + '</div>');
     }
 
-    var $datumString = '';
+    var $datumString;
     var $myMedia;
 
     // ganze XML-datei einlesen und in Variable 'XMLmediaArray' speichern
@@ -126,6 +127,7 @@ function buildCal(m, y) {
             $myMedia = $(this);
             $datumString = $myMedia.find("datum").text();
             if ($datumString != '') {
+
                 $datumString = replaceAll(".", "", $datumString);
                 $datumString = replaceAll(" ", "", $datumString);
                 if ($datumString.contains('-')) {
