@@ -90,22 +90,28 @@ function appendResult(result) {
         '<div class="image-filter" >' + '<img src="' + result.find("image").text() + '" width="100%"/>' + '</div>' +
         '<table class="table-filter">' +
         '<tr>' +
-        '<td>' + 'Wann ?' + '</td>' +
+        '<td class="bold">' + 'Zeit' + '</td>' +
         '<td>' + result.find("datum").text() + '<br/>' + result.find("zeit").text() + '</td>' +
         '</tr>' +
 
         '<tr>' +
-        '<td>' + 'Wo ?' + '</td>' +
-        '<td>' + result.find("address").text() + '</td>' +
+        '<td class="bold">' + 'Ort' + '</td>' +
+        '<td>' +
+        (result.find("map").text() != '' ? '<a href="' + result.find("url").text() + '" target="_blank">' : '') +
+        result.find("address").text() +
+        (result.find("map").text() != '' ? '</a>' : '') +
+        '</td>' +
         '</tr>' +
 
         '<tr>' +
-        '<td>' + '<a href="' + result.find("url").text() + ' target="_blank">' + 'Zum Event' + '</a>' + '</td>' +
-        '<td>' + '<a href="' + result.find("map").text() + ' target="_blank"">' + 'Auf Karte anzeigen' + '</a>' + '</td>' +
+        '<td class="bold">' + 'Eventlink' + '</td>' +
+        '<td>' +
+        (result.find("url").text() != '' ? '<a href="' + result.find("url").text() + '" target="_blank">' + 'Zum Event' + '</a>' : '- Kein Eventlink - ') +
+        '</td>' +
         '</tr>' +
 
         '<tr>' +
-        '<td>' + 'Tags' + '</td>' +
+        '<td class="bold">' + 'Tags' + '</td>' +
         '<td>' + result.find("tags").text() + '</td>' +
         '</tr>' +
         '</table>' +

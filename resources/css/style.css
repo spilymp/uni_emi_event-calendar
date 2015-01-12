@@ -109,6 +109,10 @@ div .filled {
     font-weight: bold;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 header {
     background-image: -webkit-linear-gradient(#dcdcdc 10%, #f5f5f5 100%);
     background-image: -moz-linear-gradient(#dcdcdc 10%, #f5f5f5 100%);
